@@ -20,11 +20,9 @@
                     const listElement = document.getElementById('guidelineList');
                     listElement.innerHTML = ''; // 初期化
                     data.forEach(item => {
-                        if (item.isPublic) {
-                            const itemElement = document.createElement('div');
-                            itemElement.innerHTML = `<h2>${item.title}</h2><p><a href="${item.sourceUrl}">ソースを見る</a></p>`;
-                            listElement.appendChild(itemElement);
-                        }
+                        const itemElement = document.createElement('div');
+                        itemElement.innerHTML = `<h2>${item.title}</h2><p><a href="${item.sourceUrl}">ソースを見る</a></p>`;
+                        listElement.appendChild(itemElement);
                     });
                 })
                 .catch(error => {
