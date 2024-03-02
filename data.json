@@ -11,4 +11,16 @@
     "isPublic": false,
     "sourceUrl": "http://example.com/guidelineB"
   }
+  {
+    "id": 3,
+    "title": "医療ガイドラインC",
+    "isPublic": true,
+    "sourceUrl": "http://example.com/guidelineA"
+  },
+  {
+    "id": 4,
+    "title": "医療ガイドラインD",
+    "isPublic": false,
+    "sourceUrl": "http://example.com/guidelineB"
+  }
 ]
