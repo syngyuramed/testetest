@@ -1,1 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>医療ガイドライン一覧</title>
+</head>
+<body>
+    <h1>医療ガイドライン一覧</h1>
+    <div id="guidelineList">ガイドラインがここに表示されます。</div>
+    <script>
+        function fetchData() {
+            fetch('data.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Network response was not ok (${response.status})`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const listElement = document.getElementById('guidelineList');
+                    listElement.innerHTML = ''; // 初期化
+                    data.forEach(item => {
+                        if (item.isPublic) {
+                            const itemElement = document.createElement('div');
+                            itemElement.innerHTML = `<h2>${item.title}</h2><p><a href="${item.sourceUrl}">ソースを見る</a></p>`;
+                            listElement.appendChild(itemElement);
+                        }
+                    });
+                })
+                .catch(error => {
+                    console.error('There was a problem with your fetch operation:', error);
+                    document.getElementById('guidelineList').innerHTML = 'データを読み込むことができませんでした。';
+                });
+        }
 
+        // ページの読み込みが完了したらデータをフェッチする
+        window.onload = fetchData;
+    </script>
+</body>
+</html>
