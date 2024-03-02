@@ -2,37 +2,51 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>医療ガイドライン一覧</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>医療ガイドライン一覧</h1>
-    <div id="guidelineList">ガイドラインがここに表示されます。</div>
+    <div class="container mt-5">
+        <h1>医療ガイドライン一覧</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>タイトル</th>
+                    <th>公開状態</th>
+                    <th>ソース</th>
+                </tr>
+            </thead>
+            <tbody id="guidelineList">
+                <!-- ガイドラインがここに表示されます -->
+            </tbody>
+        </table>
+    </div>
     <script>
         function fetchData() {
             fetch('data.json')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`Network response was not ok (${response.status})`);
-                    }
-                    return response.json();
-                })
+                .then(response => response.json())
                 .then(data => {
                     const listElement = document.getElementById('guidelineList');
-                    listElement.innerHTML = ''; // 初期化
                     data.forEach(item => {
-                        const itemElement = document.createElement('div');
-                        itemElement.innerHTML = `<h2>${item.title}</h2><p><a href="${item.sourceUrl}">ソースを見る</a></p>`;
-                        listElement.appendChild(itemElement);
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${item.title}</td>
+                            <td>${item.isPublic ? '公開' : '非公開'}</td>
+                            <td><a href="${item.sourceUrl}">ソースを見る</a></td>
+                        `;
+                        listElement.appendChild(row);
                     });
-                })
-                .catch(error => {
-                    console.error('There was a problem with your fetch operation:', error);
-                    document.getElementById('guidelineList').innerHTML = 'データを読み込むことができませんでした。';
                 });
         }
 
         // ページの読み込みが完了したらデータをフェッチする
         window.onload = fetchData;
     </script>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
