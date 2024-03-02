@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "title": "医療ガイドラインA",
+    "isPublic": true,
+    "sourceUrl": "http://example.com/guidelineA"
+  },
+  {
+    "id": 2,
+    "title": "医療ガイドラインB",
+    "isPublic": false,
+    "sourceUrl": "http://example.com/guidelineB"
+  }
+]
