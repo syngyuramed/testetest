@@ -33,7 +33,9 @@
                         const row = document.createElement('tr');
                         row.innerHTML = `
                             <td>${item.title}</td>
-                            <td>${item.isPublic ? '公開' : '非公開'}</td>
+                            <td>${item.price}</td>
+                            <td>${item.latestPublicationYear}</td>
+                            <td>${item.isOpenAccess ? 'はい' : 'いいえ'}</td>
                             <td><a href="${item.sourceUrl}">ソースを見る</a></td>
                         `;
                         listElement.appendChild(row);
