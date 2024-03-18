@@ -2,25 +2,33 @@
   {
     "id": 1,
     "title": "プリオン病診療ガイドライン",
-    "isPublic": true,
+    "price": "?",
+    "latestPublicationYear": ?,
+    "isOpenAccess": true,
     "sourceUrl": "http://example.com/guidelineA"
   },
   {
     "id": 2,
     "title": "医療ガイドラインB",
-    "isPublic": false,
+    "price": "?",
+    "latestPublicationYear": ?,
+    "isOpenAccess": false,
     "sourceUrl": "http://example.com/guidelineB"
   },
   {
     "id": 3,
     "title": "医療ガイドラインC",
-    "isPublic": true,
-    "sourceUrl": "http://example.com/guidelineA"
+    "price": "?",
+    "latestPublicationYear": ?,
+    "isOpenAccess": true,
+    "sourceUrl": "http://example.com/guidelineC"
   },
   {
     "id": 4,
     "title": "医療ガイドラインD",
-    "isPublic": false,
-    "sourceUrl": "http://example.com/guidelineB"
+    "price": "?",
+    "latestPublicationYear": ?,
+    "isOpenAccess": false,
+    "sourceUrl": "http://example.com/guidelineD"
   }
 ]
