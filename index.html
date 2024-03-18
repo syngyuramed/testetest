@@ -17,7 +17,6 @@
                     <th>値段</th>
                     <th>最新版公開年</th>
                     <th>オープンアクセス</th>
-                    <th>ソース</th>
                 </tr>
             </thead>
             <tbody id="guidelineList">
@@ -38,7 +37,6 @@
                             <td>${item.price}</td>
                             <td>${item.latestPublicationYear}</td>
                             <td>${item.isOpenAccess ? 'はい' : 'いいえ'}</td>
-                            <td><a href="${item.sourceUrl}">ソースを見る</a></td>
                         `;
                         listElement.appendChild(row);
                     });
